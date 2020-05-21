@@ -35,7 +35,8 @@ The **models** folder contains saved models needed for the initialization of the
 Some representive examples to run experiments using DMGP/DFGP model.
 
 ```
-# Train MGP and FGP model on the toy dataset for fixed number of eigenfunctions and spectral frequencies, respectively. A pdf file with a plot is generared in plots folder called  
+# Train MGP and FGP model on the toy dataset for fixed number of eigenfunctions and spectral frequencies, respectively.
+# A pdf file with a plot is generared in plots folder called  
 
 python src/main_toyData.py --run_multiple_m=False
 
