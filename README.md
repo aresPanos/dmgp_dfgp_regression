@@ -45,7 +45,7 @@ python src/main_toyData.py --run_multiple_m=False
 ```
 # Learn DMGP and DFGP models over the Protein dataset and repeat experiments 5 times.
 # Set the number of epochs equal to 100 and use mini-batches of size 1000. 
-#Print the values of the log-marginal likelihood every 10 epochs.
+# Print the values of the log-marginal likelihood every 10 epochs.
 # For DMGP use 15 eigenfunctions with 1-D embedding while for DFGP use 20 spectral frequencies with a 4-D embedding.
 # For both models, initialize their DNN's weights with pretrained DNNs
 
