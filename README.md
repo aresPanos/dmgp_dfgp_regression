@@ -5,7 +5,7 @@ We provide the code used in our paper [Faster Gaussian Processes via Deep Embedd
 TensorFlow - version 2.1.0  
 TensorFlow Probability - version 0.9.0  
 GPflow - version 2.0.0 or newer  
-silence-tensorflow - version 1.1.1
+silence-tensorflow - version 1.1.1 (optional)
 
 ## Flags ##
 * batch_size: Batch size (integer - default=1000)
