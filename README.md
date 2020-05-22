@@ -1,4 +1,7 @@
 # Deep Mercer Gaussian Process (DMGP) and Deep Fourier Gaussian Process (DFGP) Regression #
+
+<img src="plots/1d_example.png" height="300">
+
 We provide the code used in our paper [Faster Gaussian Processes via Deep Embeddings](https://arxiv.org/abs/2004.01584) to reproduce results. The Deep Mercer GP,  Deep Fourier GP, and their corresspnding shallow counterparts models are implemented. 
 
 ## Prerequisites ##
