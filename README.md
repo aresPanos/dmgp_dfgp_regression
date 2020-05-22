@@ -36,7 +36,7 @@ Some representive examples to run experiments using DMGP/DFGP model.
 
 ```
 # Train MGP and FGP model on the toy dataset for fixed number of eigenfunctions and spectral frequencies, respectively.
-# A pdf file called *1d_example.pdf* is generared in plots folder 
+# A pdf file called *1d_example.png* is generared in plots folder 
 
 python src/main_toyData.py --run_multiple_m=False
 
