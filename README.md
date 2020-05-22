@@ -39,7 +39,7 @@ Some representive examples to run experiments using DMGP/DFGP model.
 
 ```
 # Train MGP and FGP model on the toy dataset for fixed number of eigenfunctions and spectral frequencies, respectively.
-# A pdf file called *1d_example.png* is generared in plots folder 
+# A pdf file called *1d_example.png* is generared in plots folder.
 
 python src/main_toyData.py --run_multiple_m=False
 
@@ -50,7 +50,7 @@ python src/main_toyData.py --run_multiple_m=False
 # Set the number of epochs equal to 100 and use mini-batches of size 1000. 
 # Print the values of the log-marginal likelihood every 10 epochs.
 # For DMGP use 15 eigenfunctions with 1-D embedding while for DFGP use 20 spectral frequencies with a 4-D embedding.
-# For both models, initialize their DNN's weights with pretrained DNNs
+# For both models, initialize their DNN's weights with pretrained DNNs.
 
 python src/main_realData.py --dataset=protein --batch_size=1000 --display_freq=10 --num_splits=5 --m_dmgp=15 --d_dmgp=1  --m_dfgp=20 --d_dmgp=4 --use_dnn_init=True
 
