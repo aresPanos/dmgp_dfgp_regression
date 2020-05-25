@@ -4,7 +4,7 @@
 
 We provide the code used in our paper [Faster Gaussian Processes via Deep Embeddings](https://arxiv.org/abs/2004.01584) to reproduce results. The Deep Mercer GP,  Deep Fourier GP, and their corresspnding shallow counterparts models are implemented. 
 
-## Prerequisites ##
+## Requirements ##
 TensorFlow - version 2.1.0  
 TensorFlow Probability - version 0.9.0  
 GPflow - version 2.0.0 or newer  
