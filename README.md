@@ -2,7 +2,7 @@
 
 <img src="plots/1d_example.png" height="300">
 
-We provide the code used in our paper [Faster Gaussian Processes via Deep Embeddings](https://arxiv.org/abs/2004.01584) to reproduce results. The Deep Mercer GP,  Deep Fourier GP, and their corresspnding shallow counterparts models are implemented. 
+We provide the code used in our paper [Scalable Gaussian Processes, with Guarantees: Kernel Approximations and Deep Feature Extraction](https://arxiv.org/abs/2004.01584) to reproduce results. The Deep Mercer GP,  Deep Fourier GP, and their corresspnding shallow counterparts models are implemented. 
 
 ## Requirements ##
 TensorFlow - version 2.1.0  
