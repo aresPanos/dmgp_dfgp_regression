@@ -1,0 +1,2 @@
+model_checkpoint_path: "dnn_dmgp_weights_elevators_split=1"
+all_model_checkpoint_paths: "dnn_dmgp_weights_elevators_split=1"
