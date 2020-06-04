@@ -13,7 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# This script produces the results for the 1D-Data and 4D-Data simulated datasets used in the paper
+# This script produces the results for the 1D-Data simulated datasets used in the paper
 
 import importlib.util
 spec = importlib.util.find_spec('silence_tensorflow')
@@ -95,22 +95,22 @@ ax[0].fill_between(x_test.squeeze(), mean_f_gp - 1.96*std_f_gp, mean_f_gp + 1.96
 ax[0].set_ylabel('Output $y$', fontsize=22)
 ax[0].set_ylim([-3, 3])
 ax[0].set_xlim([-2.5, 2.5])
-ax[0].legend(loc='upper left', prop={'size': 14})
+ax[0].legend(loc='upper left', prop={'size': 16})
 
 ax[1].plot(x_train, y_train, 'kx', label='Training points', markersize=8, markeredgewidth=2)
 ax[1].plot(x_test, y_test, 'r', label='Ground truth', linewidth=2)
-ax[1].plot(x_test, mean_f_mgp, color='y', dashes=[6, 2], linewidth=2, label='MGP - $m$=' + str(m_in))
+ax[1].plot(x_test, mean_f_mgp, color='y', dashes=[6, 2], linewidth=2, label='MGP - $r$=' + str(m_in))
 ax[1].fill_between(x_test.squeeze(), mean_f_mgp - 1.96*std_f_mgp, mean_f_mgp + 1.96*std_f_mgp, facecolor='b', alpha=0.1)
 ax[1].set_xlabel('Input $x$', fontsize=22)
 ax[1].set_xlim([-2.5, 2.5])
-ax[1].legend(loc='upper left', prop={'size': 14})
+ax[1].legend(loc='upper left', prop={'size': 16})
 
 ax[2].plot(x_train, y_train, 'kx', label='Training points', markersize=8, markeredgewidth=2)
 ax[2].plot(x_test, y_test, 'r', label='Ground truth', linewidth=2)
-ax[2].plot(x_test.squeeze(), mean_f_fgp, color='y', dashes=[6, 2], linewidth=2, label='FGP - $m$=' + str(m_in))
+ax[2].plot(x_test.squeeze(), mean_f_fgp, color='y', dashes=[6, 2], linewidth=2, label='FGP - $r$=' + str(2*m_in))
 ax[2].fill_between(x_test.squeeze(), mean_f_fgp - 1.96*std_f_fgp, mean_f_fgp + 1.96*std_f_fgp, facecolor='b', alpha=0.1)
 ax[2].set_xlim([-2.5, 2.5])
-ax[2].legend(loc='upper left', prop={'size': 14})
+ax[2].legend(loc='upper left', prop={'size': 16})
 
 fig.tight_layout()
 plt.savefig(dir_parent + '/plots/1d_example.png', format='png')
@@ -134,7 +134,7 @@ if FLAGS.run_multiple_m:
         mean_f_mgp, var_f_mgp = mean_f_mgp.numpy().squeeze(), var_f_mgp.numpy().squeeze()
         std_f_mgp = np.sqrt(var_f_mgp)
 
-        print('\n\n*** m={} ***' .format(m_list[i]))
+        print('\n\n*** # eigenfunctions/spectral densities: {} ***' .format(m_list[i]))
         rmse_test_mgp, nlpd_test_mgp = compute_rmse_nlpd(y_test, mean_f_mgp, var_f_mgp)
         print('MGP RMSE: %.4f    NLPD: %.4f    Marginal: %.4f' % (rmse_test_mgp, nlpd_test_mgp, marg_lkl_mgp))
 
@@ -158,21 +158,21 @@ if FLAGS.run_multiple_m:
         fig, ax = plt.subplots(1, 2, sharex='col', sharey='row', figsize=(17,7))
         ax[0].plot(x_train, y_train, 'kx', label='Training points', markersize=8, markeredgewidth=2)
         ax[0].plot(x_test, y_test, 'r', label='Ground truth', linewidth=2)
-        ax[0].plot(x_test, mean_f_mgp, color='y', dashes=[6, 2], linewidth=2, label='MGP - $m$=' + str(m_list[i]))
+        ax[0].plot(x_test, mean_f_mgp, color='y', dashes=[6, 2], linewidth=2, label='MGP - $r$=' + str(m_list[i]))
         ax[0].fill_between(x_test.squeeze(), mean_f_mgp - 1.96*std_f_mgp, mean_f_mgp + 1.96*std_f_mgp, facecolor='b', alpha=0.1)
         ax[0].set_ylabel('Output $y$', fontsize=22)
         ax[0].set_ylim([-3, 3])
         ax[0].set_xlabel('Input $x$', fontsize=22)
         ax[0].set_xlim([-2.5, 2.5])
-        ax[0].legend(loc='upper left', prop={'size': 14})
+        ax[0].legend(loc='upper left', prop={'size': 16})
 
         ax[1].plot(x_train, y_train, 'kx', label='Training points', markersize=8, markeredgewidth=2)
         ax[1].plot(x_test, y_test, 'r', label='Ground truth', linewidth=2)
-        ax[1].plot(x_test.squeeze(), mean_f_fgp, color='y', dashes=[6, 2], linewidth=2, label='FGP - $m$=' + str(m_list[i]))
+        ax[1].plot(x_test.squeeze(), mean_f_fgp, color='y', dashes=[6, 2], linewidth=2, label='FGP - $r$=' + str(2*m_list[i]))
         ax[1].fill_between(x_test.squeeze(), mean_f_fgp - 1.96*std_f_fgp, mean_f_fgp + 1.96*std_f_fgp, facecolor='b', alpha=0.1)
         ax[1].set_xlim([-2.5, 2.5])
         ax[1].set_xlabel('Input $x$', fontsize=22)
-        ax[1].legend(loc='upper left', prop={'size': 14})
-        plt.savefig(dir_parent + '/plots/1d_example_fgp_mgp_m=' + str(m_list[i]) + '.png', format='png')
+        ax[1].legend(loc='upper left', prop={'size': 16})
+        plt.savefig(dir_parent + '/plots/1d_example_fgp_mgp_r=' + str(m_list[i]) + '.png', format='png')
 
 plt.show()
