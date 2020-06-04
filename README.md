@@ -1,6 +1,6 @@
 # Deep Mercer Gaussian Process (DMGP) and Deep Fourier Gaussian Process (DFGP) Regression #
 
-<img src="plots/1d_example.png" height="300">
+<img src="plots/1d_example_2.png" height="300">
 
 We provide the code used in our paper [Scalable Gaussian Processes, with Guarantees: Kernel Approximations and Deep Feature Extraction](https://arxiv.org/abs/2004.01584) to reproduce results. The code includes implementation of Deep Mercer GP,  Deep Fourier GP, and their corresspnding shallow counterparts models. 
 
